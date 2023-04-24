@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Gringo</title>
+</head>
+<body>
+    <h1>Nativo ou Gringo?</h1>
+    De onde você é? <input type="text" name="txtname" id="txtname">
+    <input type="button" value="Analisando" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            var txtn = window.document.getElementById('txtname')
+            var res = window.document.getElementById('res')
+            var txt = String(txtn)
+            res.innerHTML = `Você nasceu em ${txt}.`
+            if (txtn != 'Brasileiro') {
+                res.innerHTML += `<p>Completamente <strong>Gringo</strong>!</p>`
+            } else {
+                res.innerHTML += `<p>Sangue <strong>BRASILEIRO</strong> corre nas suas veias</p>`
+            }
+            res.innerHTML += `<p>Independente de tudo, seja feliz.</p>`
+        }
+    </script>
+</body>
+</html>
